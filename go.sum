@@ -1,0 +1,4 @@
+github.com/dafanasev/go-yandex-dictionary v0.0.0-20180809105718-62517a1139fe h1:m//Ejrfp0alzDGP3usd0AloFhMmrbhxM8eHhachisp8=
+github.com/dafanasev/go-yandex-dictionary v0.0.0-20180809105718-62517a1139fe/go.mod h1:XrT0RxL9Jtu2i6uXCaasvebaKoABna9UmPXpJc6SnLI=
+github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
