@@ -23,13 +23,13 @@ func TranslateRus(rus, api string) (*Translate, error) {
 	if err != nil {
 		return nil, err
 	}
-	var ret = &Translate{
+	var ret = Translate{
 		Eng:           definition.Def[0].Tr[0].Text,
 		Rus:           rus,
 		Transcription: definition.Def[0].Ts,
 	}
 	fmt.Println(ret)
-	return ret, err
+	return &ret, err
 }
 
 func TranslateEng(eng, api string) (*Translate, error) {
@@ -39,6 +39,9 @@ func TranslateEng(eng, api string) (*Translate, error) {
 		return nil, err
 	}
 	definition, err := dict.Lookup(&dictionary.Params{Lang: "en-ru", Text: eng})
+	if err != nil {
+		return nil, err
+	}
 	var ret = Translate{
 		Eng:           definition.Def[0].Tr[0].Text,
 		Rus:           eng,
