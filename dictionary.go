@@ -1,8 +1,6 @@
 package yandextranslate
 
 import (
-	"fmt"
-
 	dictionary "github.com/dafanasev/go-yandex-dictionary"
 )
 
@@ -23,13 +21,9 @@ func TranslateRus(rus, api string) (*Translate, error) {
 	if err != nil {
 		return nil, err
 	}
-	var ret = Translate{
-		Eng:           definition.Def[0].Tr[0].Text,
-		Rus:           rus,
-		Transcription: definition.Def[0].Ts,
-	}
-	fmt.Println(ret)
-	return &ret, err
+	def, err := TranslateEng(definition.Def[0].Tr[0].Text, api)
+
+	return def, err
 }
 
 func TranslateEng(eng, api string) (*Translate, error) {
@@ -47,6 +41,6 @@ func TranslateEng(eng, api string) (*Translate, error) {
 		Rus:           eng,
 		Transcription: definition.Def[0].Ts,
 	}
-	fmt.Println(ret.Transcription)
+
 	return &ret, err
 }
