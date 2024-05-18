@@ -21,9 +21,10 @@ func TranslateRus(rus, api string) (*Translate, error) {
 	if err != nil {
 		return nil, err
 	}
-	def, err := TranslateEng(definition.Def[0].Tr[0].Text, api)
 
-	return def, err
+	ret, err := TranslateEng(definition.Def[0].Tr[0].Text, api)
+
+	return ret, err
 }
 
 func TranslateEng(eng, api string) (*Translate, error) {
